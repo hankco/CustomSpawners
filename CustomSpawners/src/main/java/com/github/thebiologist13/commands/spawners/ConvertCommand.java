@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import com.github.thebiologist13.CustomSpawners;
 import com.github.thebiologist13.SpawnableEntity;
 import com.github.thebiologist13.Spawner;
-import com.github.thebiologist13.v1_6_R2.Converter;
+import com.github.thebiologist13.v1_8_R3.Converter;
 
 public class ConvertCommand extends SpawnerCommand {
 

@@ -137,7 +137,7 @@ public class SpawnableEntity implements Serializable, ISpawnableEntity {
 			if(entity instanceof LivingEntity) {
 				Monster m = h.getCharacterManager().getMonster((LivingEntity) entity);
 				if(m != null) {
-					damage = m.getDamage();
+					damage = (int) m.getDamage();
 					exp = m.getExperience();
 				}
 			}
@@ -177,7 +177,7 @@ public class SpawnableEntity implements Serializable, ISpawnableEntity {
 		expr = expr.replaceAll("@fuse", "" + ((this.data.containsKey("fuse")) ? (Integer) this.data.get("fuse") : 0));
 		expr = expr.replaceAll("@yield","" + ((this.data.containsKey("yield")) ? (Double) this.data.get("yield") : 4.0f));
 		expr = expr.replaceAll("@xp", "" + ((this.data.containsKey("exp")) ? (Integer) this.data.get("exp") : 1));
-		expr = expr.replaceAll("@players", "" + Bukkit.getServer().getOnlinePlayers().length);
+		expr = expr.replaceAll("@players", "" + Bukkit.getServer().getOnlinePlayers().size());
 		expr = expr.replaceAll("@heroes_damage", "" + damage);
 		expr = expr.replaceAll("@heroes_experience", "" + exp);
 		expr = expr.replaceAll("@h_damage", "" + damage);
@@ -579,8 +579,7 @@ public class SpawnableEntity implements Serializable, ISpawnableEntity {
 	
 	@Override
 	public float getWidth() {
-		return (this.data.containsKey("width")) ? (Float) this.data
-				.get("width") : -1f;
+		return (this.data.containsKey("width")) ? (Float) this.data.get("width") : -1f;
 	}
 
 	//TODO Modifiers for 2nd velocity

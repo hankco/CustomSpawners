@@ -159,6 +159,8 @@ public interface ISpawnableEntity extends IObject {
 	
 	public void setBlockBelow(boolean reqsBlockBelow);
 	
+	public void setWidth(float width);
+	
 	public void setHeight(float height);
 	
 	public void setLength(float length);
@@ -166,8 +168,6 @@ public interface ISpawnableEntity extends IObject {
 	public void setMaxAir(int max);
 	
 	public void setMaxHealth(int maxHealth);
-	
-	public void setWidth(float width);
 
 	public boolean showCustomName();
 	

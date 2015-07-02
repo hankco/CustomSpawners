@@ -21,7 +21,7 @@ public class ProjectileFireEvent implements Listener {
 	@EventHandler
 	public void onProjectileFire(ProjectileLaunchEvent ev) {
 		//Entity that fired projectile
-		Entity launcher = ev.getEntity().getShooter();
+		Entity launcher = (Entity) ev.getEntity().getShooter();
 		//Projectile
 		Projectile pro = ev.getEntity();
 		//SpawnableEntity

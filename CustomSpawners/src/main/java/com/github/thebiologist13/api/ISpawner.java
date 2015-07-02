@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 
@@ -27,6 +28,8 @@ public interface ISpawner extends IObject {
 	public byte getBlockData();
 
 	public int getBlockId();
+	
+	public Material getMaterial();
 
 	public Map<String, Object> getData();
 

@@ -17,7 +17,8 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
-import net.astesana.javaluator.DoubleEvaluator;
+import com.fathzer.soft.javaluator.DoubleEvaluator;
+
 import net.citizensnpcs.Citizens;
 import net.citizensnpcs.api.CitizensAPI;
 import net.citizensnpcs.api.npc.NPC;
@@ -50,7 +51,7 @@ import com.github.thebiologist13.api.ISpawner;
 import com.github.thebiologist13.attributelib.VanillaAttribute;
 import com.github.thebiologist13.listeners.*;
 import com.github.thebiologist13.serialization.SPotionEffect;
-import com.github.thebiologist13.v1_6_R2.Converter;
+import com.github.thebiologist13.v1_8_R3.Converter;
 import com.herocraftonline.heroes.Heroes;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 
@@ -857,9 +858,9 @@ public class CustomSpawners extends JavaPlugin {
 		ItemStack item = item0.toItemStack();
 
 		if (item.getType() != null) {
-			name += item.getType().toString() + " (" + item.getTypeId() + ")";
+			name += item.getType().toString() + " (" + item.getType() + ")";
 		} else {
-			name += item.getTypeId();
+			name += item.getType();
 		}
 
 		if (item.getDurability() != 0) {
@@ -882,9 +883,9 @@ public class CustomSpawners extends JavaPlugin {
 		}
 
 		if (item.getType() != null) {
-			name += item.getType().toString() + " (" + item.getTypeId() + ")";
+			name += item.getType().toString() + " (" + item.getType() + ")";
 		} else {
-			name += item.getTypeId();
+			name += item.getType();
 		}
 
 		if (item.getDurability() != 0) {
@@ -898,6 +899,7 @@ public class CustomSpawners extends JavaPlugin {
 	public ItemStack getItemStack(String value) {
 		// Format should be either <data value:damage value> or <data value>
 		int id = 0;
+		String matType = "";
 		short damage = 0;
 
 		// Version 0.0.5b - Tweaked this so it would register right

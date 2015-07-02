@@ -12,6 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 
@@ -19,7 +20,7 @@ import com.github.thebiologist13.api.ISpawnableEntity;
 import com.github.thebiologist13.api.ISpawner;
 import com.github.thebiologist13.serialization.SBlock;
 import com.github.thebiologist13.serialization.SLocation;
-import com.github.thebiologist13.v1_6_R2.SpawnManager;
+import com.github.thebiologist13.v1_8_R3.SpawnManager;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.DefaultFlag;
@@ -131,7 +132,7 @@ public class Spawner implements Serializable, ISpawner {
 				((this.data.containsKey("radius")) ? Double.parseDouble(this.data.get("radius").toString()) : 0));
 		expr = expr.replaceAll("@rate", "" + 
 				((this.data.containsKey("rate")) ? (Integer) this.data.get("rate") : 60));
-		expr = expr.replaceAll("@players", "" + Bukkit.getServer().getOnlinePlayers().length);
+		expr = expr.replaceAll("@players", "" + Bukkit.getServer().getOnlinePlayers().size());
 		expr = expr.replaceAll("@nearplayers", "" + CustomSpawners.getNearbyPlayers(getLoc(), maxDis).size());
 		expr = expr.replaceAll("@light", "" + getLight());
 
@@ -793,6 +794,12 @@ public class Spawner implements Serializable, ISpawner {
 			return false;
 
 		return true;
+	}
+
+	@Override
+	public Material getMaterial() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
