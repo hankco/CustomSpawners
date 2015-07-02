@@ -3,42 +3,41 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.thebiologist13</groupId>
 	<artifactId>customspawners</artifactId>
-	<version>0.5</version>
+	<version>0.6</version>
 	<name>CustomSpawners</name>
 	<description>CustomSpawners lets you make any block a mob spawner!</description>
 	<url>http://dev.bukkit.org/server-mods/customspawners</url>
 	<packaging>jar</packaging>
 
 	<properties>
-		<bukkit.version>1.6.2-R0.1-SNAPSHOT</bukkit.version>
+		<bukkit.version>1.8.7-R0.1-SNAPSHOT</bukkit.version>
+		<craftbukkit.version>1.8.7-R0.1-SNAPSHOT</craftbukkit.version>
 		<sk89q.we>5.5</sk89q.we>
 		<sk89q.wg>5.7.2-SNAPSHOT</sk89q.wg>
-		<heroes.version>1.5.2</heroes.version>
-		<libigot.version>1.6.2-R0.1</libigot.version>
-		<citizens.version>2.0.9-SNAPSHOT</citizens.version>
-		<attributelib.version>0.0.1</attributelib.version>
+		<citizens.version>2.0.1</citizens.version>
+		<heros.version>1.5.3</heros.version>
 	</properties>
 
 	<repositories>
 		<repository>
 			<id>bukkit-repo</id>
-			<url>http://repo.bukkit.org/content/groups/public/</url>
-		</repository>
-		<repository>
-			<id>craftbukkit-repo</id>
-			<url>https://github.com/Bukkit/CraftBukkit</url>
+			<url>https://hub.spigotmc.org/nexus/</url>
 		</repository>
 		<repository>
 			<id>sk89q-repo</id>
 			<url>http://maven.sk89q.com/repo/</url>
 		</repository>
 		<repository>
-			<id>libigot</id>
-			<url>http://repo.libigot.org/</url>
+			<id>Citizens-repo</id>
+			<url>http://repo.citizensnpcs.co/</url>
 		</repository>
 		<repository>
-			<id>citizens</id>
-			<url>http://repo.citizensnpcs.com/</url>
+			<id>heros-repo</id>
+			<url>http://nexus.theyeticave.net/</url>
+		</repository>
+		<repository>
+			<id>craftbukkit-repo</id>
+			<url>http://maven.elmakers.com/repository/</url>
 		</repository>
 	</repositories>
 
@@ -50,33 +49,9 @@
 			<type>jar</type>
 		</dependency>
 		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${bukkit.version}</version>
-			<type>jar</type>
-		</dependency>
-		<dependency>
-			<groupId>net.astesana</groupId>
-			<artifactId>javaluator</artifactId>
-			<version>1.2.2</version>
-			<type>jar</type>
-		</dependency>
-		<dependency>
 			<groupId>com.sk89q</groupId>
 			<artifactId>worldedit</artifactId>
 			<version>${sk89q.we}</version>
-			<type>jar</type>
-		</dependency>
-		<dependency>
-			<groupId>com.sk89q</groupId>
-			<artifactId>worldguard</artifactId>
-			<version>${sk89q.wg}</version>
-			<type>jar</type>
-		</dependency>
-		<dependency>
-			<groupId>com.herocraftonline</groupId>
-			<artifactId>heroes</artifactId>
-			<version>${heroes.version}</version>
 			<type>jar</type>
 		</dependency>
 		<dependency>
@@ -86,10 +61,20 @@
 			<type>jar</type>
 		</dependency>
 		<dependency>
-			<groupId>com.github.thebiologist13.attributelib</groupId>
-			<artifactId>attributelib</artifactId>
-			<version>${attributelib.version}</version>
+			<groupId>com.sk89q</groupId>
+			<artifactId>worldguard</artifactId>
+			<version>${sk89q.wg}</version>
 			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>com.herocraftonline.heroes</groupId>
+		  	<artifactId>Heroes</artifactId>
+		  	<version>${heros.version}</version>
+		</dependency>
+		<dependency>
+		  	<groupId>org.bukkit</groupId>
+		  	<artifactId>craftbukkit</artifactId>
+		  	<version>${craftbukkit.version}</version>
 		</dependency>
 	</dependencies>
 	
@@ -131,7 +116,7 @@
 				<configuration>
 					<artifactSet>
 						<includes>
-							<include>net.astesana:javaluator</include>
+							<include>com.fathzer.soft:javaluator</include>
 							<include>com.github.thebiologist13:customspawners*</include>
 							<include>com.github.thebiologist13.attributelib:attributelib*</include>
 						</includes>
