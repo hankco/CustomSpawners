@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
@@ -98,7 +99,7 @@ public class CustomSpawners extends JavaPlugin {
 	public static ConcurrentHashMap<Player, Integer> groupSelection = new ConcurrentHashMap<Player, Integer>();
 
 	//Entities that should be removed when out of range. The value is the spawner ID.
-	public static ConcurrentHashMap<UUID, Integer> rangeEntities = new ConcurrentHashMap<UUID, Integer>();
+	public static Map<UUID, Integer> rangeEntities = new ConcurrentHashMap<UUID, Integer>();
 	
 	//Spawners that need to be listened on for redstone.
 	public static ConcurrentHashMap<Location, Integer> redstoneSpawners = new ConcurrentHashMap<Location, Integer>();
