@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.thebiologist13</groupId>
 	<artifactId>customspawners</artifactId>
-	<version>0.6</version>
+	<version>0.6.1</version>
 	<name>CustomSpawners</name>
 	<description>CustomSpawners lets you make any block a mob spawner!</description>
 	<url>http://dev.bukkit.org/server-mods/customspawners</url>
